@@ -2,38 +2,47 @@
 
 This demo will allow you to control Baxter's mobility base using a command line interface
 
+## Before Getting Started
+1. Ensure Baxter and the mobility base are turned off
+2. There is a power cord that connects to Baxter directly above his rear-right leg (the other end is likely connected into a power strip on the ground). Instead, plug this other end into one of the white outlets on Baxter's back.
+3. On the back of the mobility base, there is a connection labeled "Charging Port", which keeps the battery charged when not in use.  Disconnect these wires.
+4. Disconnect the kinect camera cable if applicable
+5. The only wires (potentially) that should connect Baxter to anything not affixed to Baxter should be two Ethernet cables -- one for Baxter and one for the mobility base.  Ensure these wires have plenty of slack and are not in position to be run over.
+
 ## Getting Started
 
-1. Power on Baxter
-2. Close the circuit breaker labeled "Main Breaker" on the back of the mobility base (it's a red lever -- close by rotating it up)
-3. Press the power button on the mobility base (located to the left of the status indicator light)
-4. First, ensure that the computer you're using is connected to the `mcl-umd` network (either thru Ethernet or Wi-Fi)
-5. Open a terminal and SSH into the mobility base (the password is 'password'):
+1. Close the circuit breaker labeled "Main Breaker" on the back of the mobility base (it's a red lever -- close by rotating it up until it's no longer visible)
+2. Press the power button on the mobility base (located to the left of the status indicator light)
+3. Press the power button on the Samlex-Power DC-AC Inverter (located on Baxter's back)
+4. Power on Baxter (button is located directly above Baxter's rear-left leg)
+5. First, ensure that the computer you're using is connected to the `mcl_avw` network (either thru Ethernet or Wi-Fi)
+NOTE: If using WiFi, this network is hidden, so you'll have to search for it manually
+6. Open a terminal and SSH into the mobility base (the password is 'password'):
 
 ```ssh mb@NUC.local```
 
-6. Repeat step 5 for two additional terminals -- you will need all of them
-7. In one terminal, issue the following command:
+7. Repeat step 6 for two additional terminals -- you will need all of them
+8. In one terminal, issue the following command:
 
 ```roslaunch mobility_base_bringup mobility_base.launch```
 
-8. In the second terminal, suppress the wireless command messages so you can control the base via your computer:
+9. In the second terminal, suppress the wireless command messages so you can control the base via your computer:
 
 ```rostopic pub -r 10 /mobility_base/suppress_wireless std_msgs/Empty```
 
-9. In the third terminal, run:
+10. In the third terminal, run:
 
 ```bash mobility_base_config.bash```
 
-10. Open another terminal on your computer, but don't ssh into the base.
+11. Open another terminal on your computer, but don't ssh into the base.
 We will use secure copy to transfer a copy of the navigation script from this repository to the mobility base.
 If you're in the root folder of this repository, the command is as follows:
 
 ```scp navigation/navigation.py mb@NUC.local:~/```
 
-This will copy navigation.py to the home directory on the mobility base machine
+Again, the password is 'password'. This will copy `navigation.py` to the home directory on the mobility base machine
 NOTE: If you make changes to the navigation.py script, re-issue this command to try out your working copy
-10. Finally--and again using the third terminal--run the demo script:
+12. Finally--and again using the third terminal--run the demo script:
 
 ```python navigation.py```
 
@@ -55,5 +64,6 @@ Each command will be executed until: (1) you issue another movement command, (2)
 (3) you kill the program using Ctrl-C
 
 ## TODO
+- Add tear down instructions
 - Add more commands
 - Add sensor detection to automatically stop when w/in some distance threshold of obstacles
