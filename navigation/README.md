@@ -2,6 +2,14 @@
 
 This demo will allow you to control Baxter's mobility base using a command line interface
 
+## Clone this repository
+Navigate to a suitable location on your computer and issue the following commands:
+
+```
+git clone git@github.com:mclumd/baxter-demo.git
+cd baxter-demo
+```
+
 ## Before Getting Started
 1. Ensure Baxter and the mobility base are turned off
 2. There is a power cord that connects to Baxter directly above his rear-right leg (the other end is likely connected into a power strip on the ground). Instead, plug this other end into one of the white outlets on Baxter's back.
@@ -15,7 +23,7 @@ This demo will allow you to control Baxter's mobility base using a command line 
 2. Press the power button on the mobility base (located to the left of the status indicator light)
 3. Press the power button on the Samlex-Power DC-AC Inverter (located on Baxter's back)
 4. Power on Baxter (button is located directly above Baxter's rear-left leg)
-5. First, ensure that the computer you're using is connected to the `mcl_avw` network (either thru Ethernet or Wi-Fi)
+5. Ensure that the computer you're using is connected to the `mcl_avw` network (either thru Ethernet or Wi-Fi)
 NOTE: If using WiFi, this network is hidden, so you'll have to search for it manually
 6. Open a terminal and SSH into the mobility base (the password is 'password'):
 
@@ -59,6 +67,7 @@ This script presents you with a command line interface for controlling Baxter's 
 ```
 
 Any other command input will be interpreted as a `stop` command.
+*IMPORTANT* If Baxter becomes uncontrollable at any point in time, press the `EMERGENCY STOP` button on his back (right-hand side)
 
 Each command will be executed until: (1) you issue another movement command, (2) you issue a stop or exit command,
 (3) you kill the program using Ctrl-C
