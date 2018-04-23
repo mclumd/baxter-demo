@@ -9,7 +9,9 @@ This demo will allow you to control Baxter's mobility base using a command line 
 3. Press the power button on the mobility base (located to the left of the status indicator light)
 4. First, ensure that the computer you're using is connected to the `mcl-umd` network (either thru Ethernet or Wi-Fi)
 5. Open a terminal and SSH into the mobility base (the password is 'password'):
+
 ```ssh mb@NUC.local```
+
 6. Repeat step 5 for two additional terminals -- you will need all of them
 7. In one terminal, issue the following command:
 
@@ -39,15 +41,15 @@ NOTE: If you make changes to the navigation.py script, re-issue this command to 
 This script presents you with a command line interface for controlling Baxter's movement. Currently you can issue the following commands:
 
 ```
-- forward
-- backward
-- left
-- right
-- stop
-- exit
+- forward   // move forward
+- backward  // move backward
+- left      // turn/rotate left
+- right     // turn/rotate right
+- stop      // stop any movement
+- exit      // exit program
 ```
 
-Any other command input will be interpreted as a `stop` command. `exit` will exit the program
+Any other command input will be interpreted as a `stop` command.
 
 Each command will be executed until: (1) you issue another movement command, (2) you issue a stop or exit command,
 (3) you kill the program using Ctrl-C
