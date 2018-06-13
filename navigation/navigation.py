@@ -21,7 +21,7 @@ class MbNavigate:
         self.cmd_forward_ = False
         self.cmd_backward_ = False
 
-        
+
     '''def laser_front_cb(self, data):
         if self.cmd_forward_ == True and self.cmd_backward_ == False:
             ranges = np.asarray(data.ranges)
@@ -30,7 +30,7 @@ class MbNavigate:
                 self.cmd_pub_.publish(self.vel_)
             else:
                 self.cmd_forward_ = False
-            
+
     def laser_back_cb(self, data):
         if self.cmd_backward_ == True and self.cmd_forward_ == False:
             ranges = np.asarray(data.ranges)
@@ -41,7 +41,7 @@ class MbNavigate:
                 self.cmd_backward_ = False
             return
     '''
-    
+
     def run_cmd(self, cmd):
         while (not rospy.is_shutdown()) and cmd_in_proc:
 	    vel_to_command = 0
@@ -53,7 +53,7 @@ class MbNavigate:
 			elif cmd == "backward":
 			    vel_to_command = -self.speed
 			self.vel_.linear.x = vel_to_command
-		elif cmd == "left" or cmd == "right":		
+		elif cmd == "left" or cmd == "right":
 			if cmd == "left":
 			    vel_to_command = self.speed
 			elif cmd == "right":
@@ -65,7 +65,7 @@ class MbNavigate:
                 self.cmd_pub_.publish(self.vel_)
             except KeyboardInterrupt:
                 print("Exiting")
-    
+
     def issue_cmd(self,cmd):
 	stop = False
         if cmd == "forward":
@@ -94,8 +94,6 @@ def main(args):
 	t_cmd = Thread(target=mbn.run_cmd, args=(cmd,))
 	t_cmd.start()
 
-    
+
 if __name__ == '__main__':
     main(sys.argv)
-
-    
