@@ -65,15 +65,7 @@ def main(args):
     global cmd_in_proc
     mbn = MbNavigate()
     rospy.init_node('MbNavigate', anonymous=True)
-    print("Press a recognized command, and then 'enter' to run the command. Recognized commands are as follows: 
-[w]: forwards\n
-[s]: backwards\n
-[a]: turn left\n
-[d]: turn right\n
-[q]: strafe left\n
-[e]: strafe right\n
-[x]: halt\n
-[xx]: halt and exit")
+    print("Press a recognized command, and then 'enter' to run the command. Recognized commands are as follows: \n[w]: forwards\n[s]: backwards\n[a]: turn left\n[d]: turn right\n[q]: strafe left\n[e]: strafe right\n[x]: halt\n[xx]: halt and exit")
     while (not rospy.is_shutdown()):
         cmd = raw_input("Enter Command ['w', 's', 'a', 'd', 'q', 'e', or 'x']: \n")
 	cmd_in_proc = False
