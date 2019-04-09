@@ -1,6 +1,6 @@
 # Navigation Demo
 
-This demo will allow you to control Baxter's mobility base using a command line interface
+This demo will allow you to control Baxter's mobility base using a command line interface or voice commands via Pocketsphinx Speech-to-Text software.
 
 ## Clone this repository
 Navigate to a suitable location on your computer and issue the following commands:
@@ -71,7 +71,7 @@ OR, to use voice-activated commands...
 
 ./start.sh voice-control
 ```
-NOTE: If using voice-control, you must have Pocketsphinx installed. See [instructions for downloading Pocketsphinx](pocketsphinx_instructions.md)
+NOTE: If using voice-control, you must have Pocketsphinx installed. See [instructions for using Pocketsphinx](pocketsphinx-instructions.md)
 
 ## Commands
 This script presents you with a command line interface for controlling Baxter's movement. Currently you can issue the following commands:
