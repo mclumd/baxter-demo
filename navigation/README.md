@@ -42,7 +42,7 @@ NOTE: If you make changes to navigation.py, re-issue this command to try out you
 ssh mb@NUC.local  # password is 'password'
 ```
 
-8. Repeat step 6 in two additional terminals -- you will need all of them
+8. Repeat step 7 in two additional terminals -- you will need all of them
 9. In the first terminal, issue the following command to bring up the base:
 
 ```bash
