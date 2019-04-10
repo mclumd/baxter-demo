@@ -15,6 +15,6 @@ try:
         cmd = sys.stdin.readline().strip()
         s.sendall(cmd)
 except:
-    s.sendall('exit')  # Send exit command on error or keyboard interrupt
+    s.sendall(b'exit')  # Send exit command on error or keyboard interrupt
 
 print('CLIENT DONE')
